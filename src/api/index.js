@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { currencyMap } from '../constants'
 
-const NOMICS_KEY = process.env.NOMICS_KEY
+const NOMICS_KEY = process.env.REACT_APP_NOMICS_KEY
 
 console.log(NOMICS_KEY)
 
