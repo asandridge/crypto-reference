@@ -1,3 +1,4 @@
 .env
+.eslintchache
 build/
 node_modules/
