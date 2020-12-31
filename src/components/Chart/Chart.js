@@ -41,11 +41,13 @@ const Chart = (props) => {
                 processedData = transformLogrithmic(processedData.slice());
                 //render other data for log
                 break;
+            default:
+                break;
         }
 
         setChartData(processedData);
 
-    }, [coinHistory, props.chartType, props.coinType, props.comparedCoinType, props.timeframeType])
+    }, [coinHistory, coinHistoryCompared, props.chartType, props.coinType, props.comparedCoinType, props.timeframeType])
 
 
     const yAxisLabel = props.chartType === "0" ? "Price" : (props.chartType === "1" ? `${currencyMap[props.coinType]} vs. ${currencyMap[props.comparedCoinType]}` : 'log(Price)')
