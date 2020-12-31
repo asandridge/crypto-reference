@@ -1,6 +1,8 @@
 import axios from 'axios'
 import { currencyMap } from '../constants'
 
+const NOMICS_KEY = process.env.NOMICS_KEY
+
 const now = new Date();
 const endDate = now.toISOString().substring(0, 10);
 let startDate = now;
