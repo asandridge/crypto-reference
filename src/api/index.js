@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { currencyMap } from '../constants'
 
-const NOMICS_KEY = 'demo-26240835858194712a4f8cc0dc635c7a'
+const NOMICS_KEY = process.env.NOMICS_KEY
+
+console.log(NOMICS_KEY)
 
 const now = new Date();
 const endDate = now.toISOString().substring(0, 10);
