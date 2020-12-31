@@ -1,0 +1,1 @@
+export const currencyMap = { "0": "BTC", "1": "ETH", "2": "LTC" }
