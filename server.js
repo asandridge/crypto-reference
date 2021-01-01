@@ -2,6 +2,7 @@ const express = require('express')
 const path = require('path')
 const app = express()
 var request = require('request');
+require('dotenv').config()
 
 app.use(express.static(path.join(__dirname, 'build')))
 
@@ -14,7 +15,8 @@ app.get('/get_currency_data', (req, res) => {
   let startDate = now;
   startDate.setFullYear(now.getFullYear() - 10);
   startDate = startDate.toISOString().substring(0, 10);
-  const url = `https://api.nomics.com/v1/exchange-rates/history?key=${NOMICS_KEY}&currency=${req.body.coinType}&start=${startDate}T00%3A00%3A00Z&end=${endDate}T00%3A00%3A00Z`;
+
+  const url = `https://api.nomics.com/v1/exchange-rates/history?key=${NOMICS_KEY}&currency=${req.query.coinType}&start=${startDate}T00%3A00%3A00Z&end=${endDate}T00%3A00%3A00Z`;
 
   request(url, function (error, response, body) {
     if (error) {
